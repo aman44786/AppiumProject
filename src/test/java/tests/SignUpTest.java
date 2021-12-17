@@ -29,7 +29,7 @@ public class SignUpTest {
 		cap.setCapability("appPackage", "com.avercast.fanbuku_app");
 		cap.setCapability("appActivity", "com.avercast.fanbuku_app.activity.SplashScreenActivity");//activity.MainActivity");//activity.LoginActivity");// - Calculator
 		
-		URL url=new URL("http://192.168.1.3:4723/wd/hub");
+		URL url=new URL("http://localhost:4723/wd/hub");
 		driver=new AppiumDriver<MobileElement>(url,cap);
 		
 		System.out.println("Application Started........");

@@ -28,7 +28,7 @@ public class LoginTest {
 		cap.setCapability("appPackage", "com.avercast.fanbuku_app");
 		cap.setCapability("appActivity", "com.avercast.fanbuku_app.activity.SplashScreenActivity");//activity.MainActivity");//activity.LoginActivity");// - Calculator
 		
-		URL url=new URL("http://192.168.1.3:4723/wd/hub");//http://localhost:4723/wd/hub
+		URL url=new URL("http://localhost:4723/wd/hub");//http://localhost:4723/wd/hub
 		driver=new AppiumDriver<MobileElement>(url,cap);
 		
 		System.out.println("Application Started........");
@@ -39,21 +39,22 @@ public class LoginTest {
 			ex.printStackTrace();
 		}
 	}
-	@Test(priority=7)
-	public void login()
+	@Test(priority=7) 
+	public void login() throws InterruptedException
 	{
 		//driver.findElement(By.className("android.widget.EditText")).click();
 		driver.findElement(By.className("android.widget.EditText")).clear();
-		driver.findElement(By.className("android.widget.EditText")).sendKeys("username");
+		driver.findElement(By.className("android.widget.EditText")).sendKeys("sanketwin@gmail.com");
 		
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).click();
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).clear();
-		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("password");
+		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("Sanket@12345");
 		driver.findElement(By.className("android.widget.Button")).click();
 		
 		
 		
-
+		Thread.sleep(4000);
+		
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/btn_enter")).click();
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/btn_enter")).click();
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/btn_enter")).click();
@@ -68,11 +69,11 @@ public class LoginTest {
 	public void loginInvalidUser()
 	{
 		driver.findElement(By.className("android.widget.EditText")).clear();
-		driver.findElement(By.className("android.widget.EditText")).sendKeys("username");
+		driver.findElement(By.className("android.widget.EditText")).sendKeys("sanketwin1@gmail.com");
 		
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).click();
 		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).clear();
-		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("password");
+		driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("Sanket@12345");
 		driver.findElement(By.className("android.widget.Button")).click();
 		
 	}
@@ -81,11 +82,11 @@ public class LoginTest {
 	public void loginInvalidPass()
 	{
 	driver.findElement(By.className("android.widget.EditText")).clear();
-	driver.findElement(By.className("android.widget.EditText")).sendKeys("username");
+	driver.findElement(By.className("android.widget.EditText")).sendKeys("sanket@gmail.com");
 	
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).click();
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).clear();
-	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("password");
+	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("Sanket@1234");
 	driver.findElement(By.className("android.widget.Button")).click();
 	}
 	
@@ -93,11 +94,11 @@ public class LoginTest {
 	public void loginInvalid()
 	{
 	driver.findElement(By.className("android.widget.EditText")).clear();
-	driver.findElement(By.className("android.widget.EditText")).sendKeys("username");
+	driver.findElement(By.className("android.widget.EditText")).sendKeys("sanketwin1@gmail.com");
 	
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).click();
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).clear();
-	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("password");
+	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("Sanket@1234");
 	driver.findElement(By.className("android.widget.Button")).click();
 	}
 	
@@ -105,7 +106,7 @@ public class LoginTest {
 	public void loginPassBlank()
 	{
 	driver.findElement(By.className("android.widget.EditText")).clear();
-	driver.findElement(By.className("android.widget.EditText")).sendKeys("username");
+	driver.findElement(By.className("android.widget.EditText")).sendKeys("sanketwin@gmail.com");
 	
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).click();
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).clear();
@@ -121,7 +122,7 @@ public class LoginTest {
 	
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).click();
 	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).clear();
-	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("password");
+	driver.findElement(By.id("com.avercast.fanbuku_app:id/et_password")).sendKeys("Sanket@12345");
 	driver.findElement(By.className("android.widget.Button")).click();
 	}
 	
